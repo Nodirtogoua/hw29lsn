@@ -1,96 +1,125 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
-.links{
+
+.links {
     text-decoration: none;
 }
 
-.maindiv{
-    max-width: 1300px;
+.mistake {
+    width: 100%;
+}
+
+.maindiv {
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
-.container{
-    max-width: 1270px;
+
+.container {
     width: 100%;
     margin: 0 auto;
 }
 
 /* Navbar */
 
-.navbar{
+.navbar {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.site-navbar{
+
+.site-navbar {
     display: flex;
     align-items: center;
 }
-.site-nav{
+
+.site-nav {
     display: flex;
 }
-.site-nav__links{
+
+.site-nav__links {
     font-size: 16px;
     color: #707070;
     padding: 15px;
     transition: ease 0.5s;
 }
-.site-nav__links:hover{
+
+.site-nav__links:hover {
     color: black;
     transition: ease 0.5s;
 }
-#more{
+
+#more {
     display: flex;
     align-items: center;
     gap: 7px;
     padding: 15px;
     color: #707070;
 }
-input{
+
+input {
     display: none;
 }
-.drop-down__text{
+
+.drop-down__text {
+    position: absolute;
+    margin-top: 9px;
+    margin-left: -75px;
+    z-index: 1000;
     display: none;
-    max-width: 158px;
-    width: 100%;
-    margin-left: 940px;
-    border: 1px solid rgba(0,0,0,0.15);
-    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    min-width: 160px;
+    padding: 5px 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 }
-.drop-down__text a{
+
+.drop-down__text a {
     padding-top: 5px;
     padding-bottom: 7px;
 }
-.nn{
+
+.nn {
     transition: ease 0.5s;
 }
-.nn1{
+
+.nn1 {
     transition: ease 0.5s;
 }
-.nn:hover{
+
+.nn:hover {
     background-color: #ccc;
     transition: ease 0.5s;
 }
-.nn1:hover{
+
+.nn1:hover {
     background-color: #ccc;
-    transition: ease 0.5s;      
+    transition: ease 0.5s;
 }
-#angle:checked ~ .drop-down__text{
+
+#angle:checked~.drop-down__text {
     display: flex;
     flex-direction: column;
 }
 
-.login{
+.login {
     padding-right: 30px;
 }
 
-.btn-link{
+.btn-link {
     color: white;
     font-size: 14px;
     font-weight: 600;
@@ -99,47 +128,55 @@ input{
     border-radius: 20px;
     transition: ease 0.6s;
 }
-.btn-link:hover{
+
+.btn-link:hover {
     background-color: #8c12d3;
     transition: ease 0.6s;
 }
 
 /* mobile-navbar */
-.mobile-navbar{
+.mobile-navbar {
     display: none;
 }
-.drop-list__link{
+
+.drop-list__link {
     width: 100%;
     font-size: 16px;
     color: #707070;
     padding: 15px;
     transition: ease 0.5s;
 }
-.drop-list__link:hover{
+
+.drop-list__link:hover {
     background-color: #ccc;
 }
-#mobile-more{
+
+#mobile-more {
     display: flex;
     align-items: center;
     gap: 7px;
     padding: 15px;
     color: #707070;
 }
-.drop-list__text{
+
+.drop-list__text {
     display: none;
     margin-left: 20px;
     font-size: 13px;
     padding: 0;
 }
-#triangle:checked ~ .drop-list__text{
+
+#triangle:checked~.drop-list__text {
     display: flex;
     flex-direction: column;
 }
-.drop-list__link:hover{
+
+.drop-list__link:hover {
     color: black;
     transition: ease 0.5s;
 }
-.drop-list{
+
+.drop-list {
     position: fixed;
     overflow: auto;
     margin-top: 88px;
@@ -155,7 +192,192 @@ input{
     flex-direction: column;
     align-items: start;
 }
-#bars:checked ~ .drop-list{
+
+#bars:checked~.drop-list {
     top: 0;
     transition: all 1s;
+}
+
+
+
+.hero {
+    padding: 20px 0 157px;
+    background: -webkit-linear-gradient(left, #7250d5, #aa47a5 50%, #f43a67 99%);
+    background: linear-gradient(90deg, #7250d5 0, #aa47a5 50%, #f43a67 99%);
+    position: relative;
+    overflow: hidden;
+    height: 550px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    left: -28%;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: hsla(0, 0%, 100%, .1);
+    -webkit-transform: skewX(-25deg);
+    -ms-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    height: 100px;
+    left: 0;
+    width: 100%;
+    bottom: -50px;
+    -webkit-transform: skewY(-3.5deg);
+    -ms-transform: skewY(-3.5deg);
+    transform: skewY(-3.5deg);
+}
+
+.hero h1 {
+    color: #fff;
+    line-height: 51px;
+    font-weight: 550;
+    font-size: 43px;
+    text-align: center;
+    max-width: 845px;
+    margin: 0 auto;
+    padding-top: 70px;
+}
+
+.white-border {
+    max-width: 1200px;
+    width: 100%;
+    margin: 60px auto auto auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-part {
+    position: absolute;
+    margin-top: -300px;
+    max-width: 732px;
+    width: 100%;
+    height: 424px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 4px solid #fff;
+    background-color: transparent;
+}
+
+.kal {
+    max-width: 721px;
+    width: 100%;
+    height: 433px;
+    background: url(img/mosh-home.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kal i {
+    font-size: 75px;
+    color: #fff;
+    transition: ease-in-out 0.3s;
+}
+
+.kal:hover>i {
+    transition: ease-in-out 0.3s;
+    color: #7165E5;
+}
+
+.hello {
+    font-size: 14px;
+    background: linear-gradient(90deg, #1e8bff, #6955ff 45%, #a83af5 50%, #c03ada 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    margin-top: 100px;
+    text-transform: uppercase;
+}
+
+.texts h2 {
+    color: #211c51;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.texts h5 {
+    max-width: 650px;
+    color: #211c51;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    margin: 0 auto;
+}
+
+.numbers {
+    max-width: 760px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px auto;
+}
+
+.num1{
+    color: #1e8bff;
+}
+.num2{
+    color: #6955ff;
+}
+.num3{
+    color: #a83af5;
+}
+.num4{
+    color: #c03ada;
+}
+.num h2 {
+    font-size: 40px;
+    font-weight: 500;
+}
+.num p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #211c51 !important;
+}
+
+.ackili-brat{
+    max-width: 1200px;
+    width: 100%;
+    height: 750px;
+    background: url(img/mosh-home.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.round{
+    max-width: 80px;
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.round i{
+    font-size: 28px;
+    color: white;
+    transition: ease-in-out 0.2s;
+}
+.ackili-brat:hover > .round{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: ease-in-out 0.2s;
 }
